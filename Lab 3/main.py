@@ -2,7 +2,7 @@ import methods
 
 
 def difference(x, y):
-    return abs(abs(x - y) / x * 100)
+    return round(abs(abs(x - y) / x * 100), 5)
 
 
 def main():
@@ -55,8 +55,8 @@ def main():
         elif method == 5:
             ans2 = methods.simpson_function(function, a, b, n)
 
-    print(f"\nТочное значение: {methods.integral(function, a, b)}")
-    print(f"Значение интеграла: {ans2}\nЧисло разбиения интервала интегрирования: {n}")
+    print(f"\nТочное значение: {round(methods.integral(function, a, b), 5)}")
+    print(f"Значение интеграла: {round(ans2, 5)}\nЧисло разбиения интервала интегрирования: {n}")
     print(f"Относительная погрешность: {difference(methods.integral(function, a, b), ans2)}%")
 
 
